@@ -3,8 +3,8 @@
 [![CI/CD](https://github.com/EnricoMi/publish-unit-test-result-action/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/EnricoMi/publish-unit-test-result-action/actions/workflows/ci-cd.yml)
 [![GitHub release badge](https://badgen.net/github/release/EnricoMi/publish-unit-test-result-action/stable)](https://github.com/EnricoMi/publish-unit-test-result-action/releases/latest)
 [![GitHub license badge](misc/badge-license.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![GitHub Workflows badge](https://gist.github.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/workflows.svg)](https://github.com/search?q=publish-unit-test-result-action+path%3A.github%2Fworkflows%2F+language%3AYAML+language%3AYAML&type=Code&l=YAML)
-[![Docker pulls badge](https://gist.github.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/downloads.svg)](https://github.com/users/EnricoMi/packages/container/package/publish-unit-test-result-action)
+[![GitHub Workflows badge](https://gist.github.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/workflows.svg)](https://github.com/search?q=publish-unit-test-result-action+path%3A.github%2Fworkflows%2F+language%3AYAML+language%3AYAML&type=Code&l=YAML)
+[![Docker pulls badge](https://gist.github.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/downloads.svg)](https://github.com/users/EnricoMi/packages/container/package/publish-unit-test-result-action)
 
 ![Ubuntu badge](misc/badge-ubuntu.svg)
 ![macOS badge](misc/badge-macos.svg)
@@ -15,7 +15,7 @@
 ![XUnit badge](misc/badge-xunit-xml.svg)
 ![TRX badge](misc/badge-trx.svg)
 
-[![Test Results](https://gist.githubusercontent.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/tests.svg)](https://gist.githubusercontent.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/tests.svg)
+[![Test Results](https://gist.githubusercontent.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/tests.svg)](https://gist.githubusercontent.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/tests.svg)
 
 This [GitHub Action](https://github.com/actions) analyses test result files and
 publishes the results on GitHub. It supports the [TRX file format and JUnit, NUnit and XUnit XML formats](#generating-test-result-files),
@@ -656,7 +656,7 @@ This event is therefore not use here intentionally!
 ## Create a badge from test results
 
 Here is an example how to use the [JSON](#json-result) output of this action to create a badge like this:
-[![Test Results](https://gist.githubusercontent.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/badge.svg)](https://gist.githubusercontent.com/EnricoMi/612cb538c14731f1a8fefe504f519395/raw/badge.svg)
+[![Test Results](https://gist.githubusercontent.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/badge.svg)](https://gist.githubusercontent.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/badge.svg)
 
 <details>
 <summary>Example workflow YAML</summary>
