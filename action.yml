@@ -87,6 +87,10 @@ inputs:
   test_changes_limit:
     description: 'Limits the number of removed or skipped tests reported on pull request comments. This report can be disabled with a value of 0. The default is 10.'
     required: false
+  check_run_disabled:
+    description: 'If set to `true`, then the creation of a check runs is disabled completely. This also implies `compare_to_earlier_commit` is also set to `false` implicitly.'
+    default: 'false'
+    required: false
   check_run_annotations:
     description: 'Adds additional information to the check run. This is a comma-separated list of any of the following values: "all tests" - list all found tests, "skipped tests" - list all skipped tests. Set to "none" to add no extra annotations at all'
     default: 'all tests, skipped tests'
