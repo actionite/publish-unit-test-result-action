@@ -176,6 +176,7 @@ class Test(unittest.TestCase):
                      report_individual_runs=True,
                      dedup_classes_by_file_name=True,
                      ignore_runs=False,
+                     check_run_disabled=False,
                      check_run_annotation=[],
                      seconds_between_github_reads=1.5,
                      seconds_between_github_writes=2.5,
@@ -214,6 +215,7 @@ class Test(unittest.TestCase):
             report_individual_runs=report_individual_runs,
             dedup_classes_by_file_name=dedup_classes_by_file_name,
             ignore_runs=ignore_runs,
+            check_run_disabled=check_run_disabled,
             check_run_annotation=check_run_annotation.copy(),
             seconds_between_github_reads=seconds_between_github_reads,
             seconds_between_github_writes=seconds_between_github_writes
