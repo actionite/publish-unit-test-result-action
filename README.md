@@ -1,10 +1,10 @@
 # GitHub Action to Publish Test Results
 
-[![CI/CD](https://github.com/EnricoMi/publish-unit-test-result-action/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/EnricoMi/publish-unit-test-result-action/actions/workflows/ci-cd.yml)
-[![GitHub release badge](https://badgen.net/github/release/EnricoMi/publish-unit-test-result-action/stable)](https://github.com/EnricoMi/publish-unit-test-result-action/releases/latest)
+[![CI/CD](https://github.com/actionite/publish-unit-test-result-action/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/actionite/publish-unit-test-result-action/actions/workflows/ci-cd.yml)
+[![GitHub release badge](https://badgen.net/github/release/actionite/publish-unit-test-result-action/stable)](https://github.com/actionite/publish-unit-test-result-action/releases/latest)
 [![GitHub license badge](misc/badge-license.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![GitHub Workflows badge](https://gist.github.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/workflows.svg)](https://github.com/search?q=publish-unit-test-result-action+path%3A.github%2Fworkflows%2F+language%3AYAML+language%3AYAML&type=Code&l=YAML)
-[![Docker pulls badge](https://gist.github.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/downloads.svg)](https://github.com/users/EnricoMi/packages/container/package/publish-unit-test-result-action)
+[![Docker pulls badge](https://gist.github.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4/raw/downloads.svg)](https://github.com/users/actionite/packages/container/package/publish-unit-test-result-action)
 
 ![Ubuntu badge](misc/badge-ubuntu.svg)
 ![macOS badge](misc/badge-macos.svg)
@@ -25,7 +25,7 @@ You can add this action to your GitHub workflow for ![Ubuntu Linux](https://badg
 
 ```yaml
 - name: Publish Test Results
-  uses: EnricoMi/publish-unit-test-result-action@v2
+  uses: actionite/publish-unit-test-result-action@v2
   if: always()
   with:
     junit_files: "test-results/junit/**/*.xml"
@@ -39,7 +39,7 @@ and ![Windows](https://badgen.net/badge/icon/Windows?icon=windows&label) (e.g. `
 
 ```yaml
 - name: Publish Test Results
-  uses: EnricoMi/publish-unit-test-result-action/composite@v2
+  uses: actionite/publish-unit-test-result-action/composite@v2
   if: always()
   with:
     junit_files: "test-results/junit/**/*.xml"
@@ -309,7 +309,7 @@ The `json` output of the action can be accessed through the expression `steps.<i
 
 ```yaml
 - name: Publish Test Results
-  uses: EnricoMi/publish-unit-test-result-action@v2
+  uses: actionite/publish-unit-test-result-action@v2
   id: test-results
   if: always()
   with:
@@ -323,7 +323,7 @@ Here is an example JSON:
 ```json
 {
   "title": "4 parse errors, 4 errors, 23 fail, 18 skipped, 227 pass in 39m 12s",
-  "summary": "  24 files  ±0      4 errors  21 suites  ±0   39m 12s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"duration of all tests\") ±0s\n272 tests ±0  227 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"passed tests\") ±0  18 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"skipped / disabled tests\") ±0  23 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"failed tests\") ±0  4 [:fire:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"test errors\") ±0 \n437 runs  ±0  354 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"passed tests\") ±0  53 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"skipped / disabled tests\") ±0  25 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"failed tests\") ±0  5 [:fire:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"test errors\") ±0 \n\nResults for commit 11c02e56. ± Comparison against earlier commit d8ce4b6c.\n",
+  "summary": "  24 files  ±0      4 errors  21 suites  ±0   39m 12s [:stopwatch:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"duration of all tests\") ±0s\n272 tests ±0  227 [:heavy_check_mark:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"passed tests\") ±0  18 [:zzz:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"skipped / disabled tests\") ±0  23 [:x:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"failed tests\") ±0  4 [:fire:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"test errors\") ±0 \n437 runs  ±0  354 [:heavy_check_mark:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"passed tests\") ±0  53 [:zzz:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"skipped / disabled tests\") ±0  25 [:x:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"failed tests\") ±0  5 [:fire:](https://github.com/actionite/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols \"test errors\") ±0 \n\nResults for commit 11c02e56. ± Comparison against earlier commit d8ce4b6c.\n",
   "conclusion": "success",
   "stats": {
     "files": 24,
@@ -352,7 +352,7 @@ Here is an example JSON:
     "reference_type": "earlier",
     "reference_commit": "d8ce4b6c62ebfafe1890c55bf7ea30058ebf77f2"
   },
-  "check_url": "https://github.com/EnricoMi/publish-unit-test-result-action/runs/5397876970",
+  "check_url": "https://github.com/actionite/publish-unit-test-result-action/runs/5397876970",
   "formatted": {
      "stats": {
         "duration": "2 352",
@@ -521,7 +521,7 @@ jobs:
           path: artifacts
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: actionite/publish-unit-test-result-action@v2
         with:
           junit_files: "artifacts/**/*.xml"
 ```
@@ -642,7 +642,7 @@ jobs:
            done
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: actionite/publish-unit-test-result-action@v2
         with:
           commit: ${{ github.event.workflow_run.head_sha }}
           event_file: artifacts/Event File/event.json
@@ -666,7 +666,7 @@ Here is an example how to use the [JSON](#json-result) output of this action to 
 steps:
 - …
 - name: Publish Test Results
-  uses: EnricoMi/publish-unit-test-result-action@v2
+  uses: actionite/publish-unit-test-result-action@v2
   id: test-results
   if: always()
   with:
@@ -776,7 +776,7 @@ publish-test-results:
         path: artifacts
 
     - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      uses: actionite/publish-unit-test-result-action/composite@v2
       with:
         junit_files: "artifacts/**/*.xml"
 ```
@@ -823,7 +823,7 @@ using the `actions/cache` action, and conditionally install the `wheel`package a
   run: python3 -m pip install wheel
 
 - name: Publish Test Results
-  uses: EnricoMi/publish-unit-test-result-action/composite@v2
+  uses: actionite/publish-unit-test-result-action/composite@v2
 …
 ```
 
