@@ -61,6 +61,7 @@ class Settings:
     report_individual_runs: bool
     dedup_classes_by_file_name: bool
     ignore_runs: bool
+    check_run_disabled: bool
     check_run_annotation: List[str]
     seconds_between_github_reads: float
     seconds_between_github_writes: float
@@ -172,7 +173,14 @@ class Publisher:
                 cases: UnitTestCaseResults,
                 conclusion: str):
         logger.info(f'Publishing {conclusion} results for commit {self._settings.commit}')
-        check_run, before_check_run = self.publish_check(stats, cases, conclusion)
+
+        check_run = None
+        before_check_run = None
+
+        if not self._settings.check_run_disabled:
+            check_run, before_check_run = self.publish_check(stats, cases, conclusion)
+        else:
+            logger.info("Check run creation is disabled")
 
         if self._settings.job_summary:
             self.publish_job_summary(self._settings.comment_title, stats, check_run, before_check_run)

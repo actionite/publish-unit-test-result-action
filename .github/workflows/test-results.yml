@@ -79,5 +79,5 @@ jobs:
         uses: andymckay/append-gist-action@1fbfbbce708a39bd45846f0955ed5521f2099c6d
         with:
           token: ${{ secrets.GIST_TOKEN }}
-          gistURL: https://gist.githubusercontent.com/EnricoMi/612cb538c14731f1a8fefe504f519395
+          gistURL: https://gist.githubusercontent.com/nathanklick/4cce1669e76e103c07a1bf74d47285f4
           file: tests.svg

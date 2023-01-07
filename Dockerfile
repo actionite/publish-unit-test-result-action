@@ -13,7 +13,9 @@ RUN apk add --no-cache --upgrade expat libuuid
 
 COPY python/requirements.txt /action/
 RUN apk add --no-cache build-base libffi-dev; \
+    apk upgrade --no-cache libssl3 libcrypto3; \
     pip install --upgrade --force --no-cache-dir pip && \
+    pip install --upgrade --force --no-cache-dir -r setuptools; \
     pip install --upgrade --force --no-cache-dir -r /action/requirements.txt; \
     apk del build-base libffi-dev
 

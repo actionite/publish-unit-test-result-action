@@ -254,7 +254,7 @@ jobs:
         with:
           load: true
           push: false
-          tags: enricomi/publish-unit-test-result-action:latest
+          tags: ${{ github.repository_owner }}/publish-unit-test-result-action:latest
           outputs: type=docker
 
       - name: Download Artifacts
@@ -303,6 +303,7 @@ jobs:
             -e "INPUT_EVENT_FILE" \
             -e "INPUT_EVENT_NAME" \
             -e "INPUT_TEST_CHANGES_LIMIT" \
+            -e "INPUT_CHECK_RUN_DISABLED" \
             -e "INPUT_CHECK_RUN_ANNOTATIONS" \
             -e "INPUT_CHECK_RUN_ANNOTATIONS_BRANCH" \
             -e "INPUT_SECONDS_BETWEEN_GITHUB_READS" \
@@ -357,7 +358,7 @@ jobs:
             -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" \
             -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" \
             -v "/home/runner/work/publish-unit-test-result-action/publish-unit-test-result-action":"$GITHUB_WORKSPACE" \
-            enricomi/publish-unit-test-result-action:latest
+            ${{ github.repository_owner }}/publish-unit-test-result-action:latest
         shell: bash
 
       - name: JSON output
@@ -370,7 +371,7 @@ jobs:
         id: scan
         uses: crazy-max/ghaction-container-scan@v2
         with:
-          image: enricomi/publish-unit-test-result-action:latest
+          image: ${{ github.repository_owner }}/publish-unit-test-result-action:latest
           dockerfile: ./Dockerfile
           annotations: true
       - name: Upload SARIF artifact
@@ -640,7 +641,7 @@ jobs:
     name: Configure Deployment
     needs: test
     # do not build or deploy on forked repositories
-    if: github.repository_owner == 'EnricoMi'
+    #if: github.repository_owner == 'EnricoMi'
     runs-on: ubuntu-latest
     outputs:
       image: ${{ steps.action.outputs.image }}
@@ -678,14 +679,14 @@ jobs:
     needs: [test, publish-dockerfile, publish-docker-image, publish-composite, publish-composite-extra, publish-test-file, publish-test-files, config-deploy]
 
     # do not build or deploy on forked repositories
-    if: github.repository_owner == 'EnricoMi'
+    #if: github.repository_owner == 'EnricoMi'
     runs-on: ubuntu-latest
     steps:
       - name: Docker meta
         id: docker-meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/EnricoMi/publish-unit-test-result-action
+          images: ghcr.io/${{ github.repository_owner }}/publish-unit-test-result-action
           flavor: |
             latest=false
             prefix=v

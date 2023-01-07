@@ -402,6 +402,7 @@ def get_settings(options: dict, gha: Optional[GithubAction] = None) -> Settings:
         report_individual_runs=get_bool_var('REPORT_INDIVIDUAL_RUNS', options, default=False),
         dedup_classes_by_file_name=get_bool_var('DEDUPLICATE_CLASSES_BY_FILE_NAME', options, default=False),
         ignore_runs=get_bool_var('IGNORE_RUNS', options, default=False),
+        check_run_disabled=get_bool_var('CHECK_RUN_DISABLED', options, default=False),
         check_run_annotation=annotations,
         seconds_between_github_reads=float(seconds_between_github_reads),
         seconds_between_github_writes=float(seconds_between_github_writes)
