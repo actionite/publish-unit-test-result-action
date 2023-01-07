@@ -12,7 +12,7 @@ LABEL com.github.actions.color="green"
 RUN apk add --no-cache --upgrade expat libuuid
 
 COPY python/requirements.txt /action/
-RUN apk add --no-cache build-base libffi-dev; \
+RUN apk add --no-cache build-base libffi-dev openssl; \
     pip install --upgrade --force --no-cache-dir pip && \
     pip install --upgrade --force --no-cache-dir -r /action/requirements.txt; \
     apk del build-base libffi-dev
